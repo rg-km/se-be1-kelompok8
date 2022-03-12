@@ -1,0 +1,118 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f1eeee;
+}
+
+.home-text {
+  right: 50px;
+
+  font-size: 50px;
+  font-family: Passero One;
+}
+.home-container1 {
+  width: 500px;
+  height: 550px;
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 4px;
+  justify-content: flex-start;
+}
+.home-text2 {
+  align-self: center;
+  font-style: normal;
+  font-family: Passero One;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.home-container2 {
+  top: 50px;
+  flex: 0 0 auto;
+  right: 42px;
+  width: 90px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  border-color: #121212;
+  border-style: solid;
+  border-width: 4px;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-text3 {
+  align-self: center;
+  font-style: normal;
+  font-family: Passero One;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.home-container4 {
+  flex: 0 0 auto;
+  left: 50px;
+  right: 50px;
+  width: 400px;
+  bottom: 40px;
+  height: 400px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  border-color: #0a0a0a;
+  border-style: solid;
+  border-width: 4px;
+  flex-direction: column;
+}
+.home-container5 {
+  top: 50px;
+  flex: 0 0 auto;
+  left: 50px;
+  width: 130px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  border-color: #121212;
+  border-style: solid;
+  border-width: 4px;
+  flex-direction: column;
+}
+.home-image {
+  top: 0px;
+  left: 10px;
+  bottom: 0px;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  align-self: flex-start;
+  object-fit: cover;
+}
+.home-image1 {
+  top: 0px;
+  left: 40px;
+  bottom: 0px;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  align-self: flex-start;
+  object-fit: cover;
+}
+.home-text4 {
+  left: 50px;
+  bottom: 15px;
+  position: absolute;
+  align-self: center;
+  font-style: normal;
+  font-family: Passero One;
+  font-weight: 400;
+  text-transform: uppercase;
+}

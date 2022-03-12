@@ -1,4 +1,4 @@
-const CELL_SIZE = 20;
+const CELL_SIZE = 30;
 const CANVAS_SIZE = 600;
 const REDRAW_INTERVAL = 50;
 const WIDTH = CANVAS_SIZE / CELL_SIZE;
@@ -10,7 +10,7 @@ const DIRECTION = {
   DOWN: 3,
 };
 
-const MOVE_INTERVAL = 100;
+const MOVE_INTERVAL = 150;
 
 function initPosition() {
   return {
@@ -29,19 +29,19 @@ let snake1 = {
   direction: initDirection(),
   score: 0,
 };
-let snake2 = {
-  color: "blue",
-  position: initPosition(),
-  direction: initDirection(),
-  score: 0,
-};
+// let snake2 = {
+//   color: "blue",
+//   position: initPosition(),
+//   direction: initDirection(),
+//   score: 0,
+// };
 
-let snake3 = {
-  color: "green",
-  position: initPosition(),
-  direction: initDirection(),
-  score: 0,
-};
+// let snake3 = {
+//   color: "green",
+//   position: initPosition(),
+//   direction: initDirection(),
+//   score: 0,
+// };
 
 // apple
 let apple1 = {
@@ -61,17 +61,17 @@ function drawScore(snake) {
   let scoreCanvas;
   if (snake.color == snake1.color) {
     scoreCanvas = document.getElementById("score1Board");
-  } else if (snake.color == snake2.color) {
-    scoreCanvas = document.getElementById("score2Board");
-  } else {
-    scoreCanvas = document.getElementById("score3Board");
-  }
+  } // else if (snake.color == snake2.color) {
+  //   scoreCanvas = document.getElementById("score2Board");
+  // } else {
+  //   scoreCanvas = document.getElementById("score3Board");
+  // }
   let scoreCtx = scoreCanvas.getContext("2d");
 
   scoreCtx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-  scoreCtx.font = "30px Arial";
-  scoreCtx.fillStyle = snake.color;
-  scoreCtx.fillText(snake.score, 10, scoreCanvas.scrollHeight / 2);
+  scoreCtx.font = "100px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+  scoreCtx.fillStyle = "black";
+  scoreCtx.fillText("score: " + snake.score,10,120, 200);
 }
 
 function draw() {
@@ -82,9 +82,9 @@ function draw() {
     ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
     drawCell(ctx, snake1.position.x, snake1.position.y, snake1.color);
-    drawCell(ctx, snake2.position.x, snake2.position.y, snake2.color);
-    // Soal no 6: Draw Player 3
-    drawCell(ctx, snake3.position.x, snake3.position.y, snake3.color);
+    // drawCell(ctx, snake2.position.x, snake2.position.y, snake2.color);
+    // // Soal no 6: Draw Player 3
+    // drawCell(ctx, snake3.position.x, snake3.position.y, snake3.color);
 
     // Soal no 4: draw more apples
     let img = document.getElementById("apple");
@@ -105,8 +105,6 @@ function draw() {
     );
 
     drawScore(snake1);
-    drawScore(snake2);
-    drawScore(snake3);
   }, REDRAW_INTERVAL);
 }
 
@@ -199,29 +197,29 @@ document.addEventListener("keydown", function (event) {
     snake1.direction = DIRECTION.DOWN;
   }
 
-  // control snake2
-  if (event.key === "a") {
-    snake2.direction = DIRECTION.LEFT;
-  } else if (event.key === "d") {
-    snake2.direction = DIRECTION.RIGHT;
-  } else if (event.key === "w") {
-    snake2.direction = DIRECTION.UP;
-  } else if (event.key === "s") {
-    snake2.direction = DIRECTION.DOWN;
-  }
+  // // control snake2
+  // if (event.key === "a") {
+  //   snake2.direction = DIRECTION.LEFT;
+  // } else if (event.key === "d") {
+  //   snake2.direction = DIRECTION.RIGHT;
+  // } else if (event.key === "w") {
+  //   snake2.direction = DIRECTION.UP;
+  // } else if (event.key === "s") {
+  //   snake2.direction = DIRECTION.DOWN;
+  // }
 
-  // control snake3
-  if (event.key === "j") {
-    snake3.direction = DIRECTION.LEFT;
-  } else if (event.key === "l") {
-    snake3.direction = DIRECTION.RIGHT;
-  } else if (event.key === "i") {
-    snake3.direction = DIRECTION.UP;
-  } else if (event.key === "k") {
-    snake3.direction = DIRECTION.DOWN;
-  }
+  //   // control snake3
+  //   if (event.key === "j") {
+  //     snake3.direction = DIRECTION.LEFT;
+  //   } else if (event.key === "l") {
+  //     snake3.direction = DIRECTION.RIGHT;
+  //   } else if (event.key === "i") {
+  //     snake3.direction = DIRECTION.UP;
+  //   } else if (event.key === "k") {
+  //     snake3.direction = DIRECTION.DOWN;
+  //   }
 });
 
 move(snake1);
-move(snake2);
-move(snake3);
+// move(snake2);
+// move(snake3);

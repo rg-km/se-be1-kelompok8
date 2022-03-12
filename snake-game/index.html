@@ -1,33 +1,65 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
   <head>
+    <title>Snake_Game Kelompok-8</title>
+    <link rel="icon" type="png" href="assets/ruangguru.png"><!-- Logo atas Ruang Guru  -->
+    <meta property="og:title" content="Snake_Game Kelompok-8" />
+    <meta name="author" content="Achmad Izhar as Zharonk">
+    <meta name="author2" content="Aris Firmansyah">
+    <meta name="viewport" content="width=device-width, initial- =1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}img {  display: block;}
+    </style>
+    <style>
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Passero+One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <script type="text/javascript" src="script.js"></script>
   </head>
+
   <body onload="draw();">
     <img id="apple" style="display: none;" width="20" height="20" src="assets/apple.png" alt="Apple">
-    <h1>Snake</h1>
-    <canvas
-      id="snakeBoard"
-      width="600"
-      height="600"
-      style="border: 1px solid #000000"
-    ></canvas>
-    <canvas
-      id="score1Board"
-      width="100"
-      height="100"
-      style="border: 1px solid #000000"
-    ></canvas>
-    <canvas
-      id="score2Board"
-      width="100"
-      height="100"
-      style="border: 1px solid #000000"
-    ></canvas>
-    <canvas
-      id="score3Board"
-      width="100"
-      height="100"
-      style="border: 1px solid #000000"
-    ></canvas>
+      <div>
+        <link href="css/home.css" rel="stylesheet" />
+        <div class="home-container">
+          <!-- <span class="home-text">SNAKE GAME</span> -->
+          <span class="home-text">SNAKE GAME</span>
+            <div class="home-container1">
+              <canvas id="score1Board" class="home-container2">
+              </canvas>
+              <canvas id="snakeBoard" width="600" height="600" class="home-container4"></canvas>
+              <div class="home-container5">
+                <!-- buat hati -->
+              </div>
+              <span id="level" class="home-text4"> level : </span>
+            </div>
+        </div>
+      </div>
   </body>
 </html>
