@@ -10,7 +10,7 @@ const DIRECTION = {
     DOWN: 3
 };
 
-const MOVE_INTERVAL = 150;
+const MOVE_INTERVAL = 100;
 
 function initPosition(){
     return {
@@ -32,16 +32,16 @@ function initDirection(){
     return Math.floor(Math.random() * 4);
 }
 
-function initSnake(color){
+function initSnake(life){
     return{
-        color: color,
+        color: "purple",
         ...initHeadAndBody(), // jadi ini itu ngedestruct isi dalam initHeadAndBody
         direction: initDirection(),
-        score: 0,
+        life: life
     };
 }
 
-let snake1 = initSnake("purple");
+let snake1 = initSnake(3);
 
 let apple1 = {
     position: initPosition(),
@@ -97,6 +97,14 @@ function drawApple(ctx, apple){
     );
 }
 
+function drawlife(life){
+    let img = document.getElementById("life" + life);
+    if (life < 3){
+        img.parentNode.removeChild(img);
+    }
+    
+}
+
 function drawScore(snake){
     let scoreCanvas;
     if (snake.color == snake1.color){
@@ -107,7 +115,7 @@ function drawScore(snake){
     clearScreen(scoreCtx);
     scoreCtx.font = "100px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
     scoreCtx.fillStyle = "black";
-    scoreCtx.fillText("score: " + snake.score,50,100, 200);
+    scoreCtx.fillText("score: " + (snake.body.length - 1).toString() ,50,100, 200);
 }
 
 function draw(){
@@ -128,6 +136,8 @@ function draw(){
 
         // manggil drawScore() buat snake1
         drawScore(snake1)
+
+        drawlife(snake1.life);
     }, REDRAW_INTERVAL);
 }
 
@@ -149,8 +159,9 @@ function teleport(snake){
 function eat(snake, apple){
     let snakeEat = new Audio("");
     if (snake.head.x == apple.position.x && snake.head.y == apple.position.y){ // jika posisi apple setara dengan kepala ular
-        apple.position = initPosition(); // maka apple akan dipanggil lagi dengan posisi acak (init position)
-        snake.score++; // juga scorenya ditambah
+        if (snake.body.x != apple.position.x && snake.body.y !== apple.position.y) {
+            apple.position = initPosition(); // maka apple akan dipanggil lagi dengan posisi acak (init position)
+        }
         snake.body.push({ x: snake.head.x, y: snake.head.y}); // dan snake bodynya ditambah (push/append)
         snakeEat.play(); // soundnya di play yg snakeEat itu
     }
@@ -201,12 +212,20 @@ function checkCollision(snakes){ // parameternya snakes aja biar gk bingung, klo
             }
         }
     }
+
     if (isCollide){
         gameOver.play();
-        alert("Game Over");
+        snake1.life -= 1;
 
-        snake1 = initSnake("purple");
-    } return isCollide;
+        if (snake1.life == 0){
+            alert("GAME OVER");
+            snake1 = initSnake(3);
+        }else{
+            snake1 = initSnake(snake1.life);
+        }
+    } 
+    
+    return isCollide;
 }
 
 function move(snake){
@@ -231,7 +250,6 @@ function move(snake){
         }, MOVE_INTERVAL)
     }else {
         initGame();
-    
     }
 }
 
@@ -267,5 +285,5 @@ document.addEventListener("keydown", function (event) {
 function initGame() {
     move(snake1);
 }
-  
+
 initGame();
