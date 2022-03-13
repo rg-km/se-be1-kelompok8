@@ -105,13 +105,9 @@ function drawScore(snake){
     let scoreCtx = scoreCanvas.getContext("2d");
 
     clearScreen(scoreCtx);
-    scoreCtx.font = "20px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
-    scoreCtx.textAlign = "center";
-    scoreCtx.fillText(
-        "Score : " + snake.score,
-        scoreCanvas.scrollWidth / 2,
-        scoreCanvas.scrollHeight / 2 + 5
-    );
+    scoreCtx.font = "100px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+    scoreCtx.fillStyle = "black";
+    scoreCtx.fillText("score: " + snake.score,50,100, 200);
 }
 
 function draw(){
@@ -258,13 +254,13 @@ function turn(snake, direction){
 
 document.addEventListener("keydown", function (event) {
     if (event.key === "ArrowLeft") {
-        snake1.direction = DIRECTION.LEFT;
+        turn(snake1, DIRECTION.LEFT);
     } else if (event.key === "ArrowRight") {
-        snake1.direction = DIRECTION.RIGHT;
+        turn(snake1, DIRECTION.RIGHT);
     } else if (event.key === "ArrowUp") {
-        snake1.direction = DIRECTION.UP;
+        turn(snake1, DIRECTION.UP);
     } else if (event.key === "ArrowDown") {
-        snake1.direction = DIRECTION.DOWN;
+        turn(snake1, DIRECTION.DOWN);
     }
   });
   
