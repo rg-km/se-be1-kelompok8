@@ -86,6 +86,15 @@
   border-width: 4px;
   flex-direction: column;
 }
+
+.home-container5 > img {
+  float: left;
+  overflow: hidden;
+  display:flex;
+  width: 30px;
+  height: 20px;
+}
+
 .home-image {
   top: 0px;
   left: 10px;
@@ -115,4 +124,16 @@
   font-family: Passero One;
   font-weight: 400;
   text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 5px;
+  margin: 0;  
+  overflow: hidden;
+}
+
+li {
+  float: left;
 }

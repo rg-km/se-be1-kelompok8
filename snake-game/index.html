@@ -48,17 +48,26 @@
       <!-- snake body-->
       <img id="snake-body" style="display: none;" src="assets/snakeBody.png" alt="snake-body" width="20" height="20">
       <!-- end snake body-->
-      <img id="apple" style="display: none;" width="20" height="20" src="assets/apple.png" alt="Apple">
+      <img id="apple" style="display: none;" width="20" height="20" src="assets/apple.svg" alt="Apple">
       <div>
         <div class="home-container">
           <!-- <span class="home-text">SNAKE GAME</span> -->
           <span class="home-text">SNAKE GAME</span>
             <div class="home-container1">
-              <canvas id="score1Board" class="home-container2">
-              </canvas>
+              <canvas id="score1Board" class="home-container2"></canvas>
               <canvas id="snakeBoard" width="600" height="600" class="home-container4"></canvas>
               <div class="home-container5">
-                <!-- buat hati -->
+                <ul>
+                  <li>
+                    <img id="life1" width="20" src="assets/life.png" alt="Heart"/>
+                  </li>
+                  <li>
+                    <img id="life2" width="20" src="assets/life.png" alt="Heart"/>
+                  </li>
+                  <li>
+                    <img id="life3" width="20" src="assets/life.png" alt="Heart"/>
+                  </li>
+                </ul>
               </div>
               <span id="level" class="home-text4"> level : </span>
             </div>
