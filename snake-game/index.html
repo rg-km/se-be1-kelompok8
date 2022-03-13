@@ -7,7 +7,6 @@
     <meta property="og:title" content="Snake_Game Kelompok-8" />
     <meta name="author" content="Achmad Izhar as Zharonk">
     <meta name="author2" content="Aris Firmansyah">
-    <meta name="viewport" content="width=device-width, initial- =1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
     <style>
@@ -28,25 +27,29 @@
         line-height: 1.15;
         color: var(--dl-color-gray-black);
         background-color: var(--dl-color-gray-white);
-
       }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Passero+One:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Passero+One:wght@400&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"/>
+    <link rel="stylesheet" href="css/home.css" />
+    <link href="css/home.css" rel="stylesheet" />
     <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body onload="draw();">
-    <img id="apple" style="display: none;" width="20" height="20" src="assets/apple.png" alt="Apple">
+      <!-- SNAKE -->
+      <!-- snake-head -->
+      <img id="snake-head-top" style="display: none;" src="assets/snakeHeadTop.png" alt="snake head" width="20" height="20"/>
+      <img id="snake-head-down" style="display: none;" src="assets/snakeHeadDown.png" alt="snake head" width="20" height="20"/>
+      <img id="snake-head-left" style="display: none;" class="asset" src="assets/snakeHeadLeft.png" alt="snake head" width="20" height="20"/>
+      <img id="snake-head-right" style="display: none;" class="asset" src="assets/snakeHeadRight.png" alt="snake head" width="20" height="20"/>
+      <!-- end snake-head -->
+
+      <!-- snake body-->
+      <img id="snake-body" style="display: none;" src="assets/snakeBody.png" alt="snake-body" width="20" height="20">
+      <!-- end snake body-->
+      <img id="apple" style="display: none;" width="20" height="20" src="assets/apple.png" alt="Apple">
       <div>
-        <link href="css/home.css" rel="stylesheet" />
         <div class="home-container">
           <!-- <span class="home-text">SNAKE GAME</span> -->
           <span class="home-text">SNAKE GAME</span>
@@ -61,5 +64,6 @@
             </div>
         </div>
       </div>
+      
   </body>
 </html>
