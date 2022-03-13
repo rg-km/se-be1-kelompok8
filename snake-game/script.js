@@ -157,7 +157,7 @@ function teleport(snake){
 }
 
 function eat(snake, apple){
-    let snakeEat = new Audio("");
+    let snakeEat = new Audio("assets/music/makanApple.wav");
     if (snake.head.x == apple.position.x && snake.head.y == apple.position.y){ // jika posisi apple setara dengan kepala ular
         if (snake.body.x != apple.position.x && snake.body.y !== apple.position.y) {
             apple.position = initPosition(); // maka apple akan dipanggil lagi dengan posisi acak (init position)
@@ -198,7 +198,7 @@ function moveUp(snake) {
 function checkCollision(snakes){ // parameternya snakes aja biar gk bingung, klo pake'snake' nnti bingung ngerujuknya kemana
     let isCollide = false;
     let gameOver = new Audio();
-    gameOver.src = "...";
+    gameOver.src = "assets/music/gameOver.mp3";
 
     for(let i = 0; i < snakes.length; i++){
         for (let j = 0; j < snakes.length; j++){
@@ -214,11 +214,12 @@ function checkCollision(snakes){ // parameternya snakes aja biar gk bingung, klo
     }
 
     if (isCollide){
-        gameOver.play();
+        
         snake1.life -= 1;
 
         if (snake1.life == 0){
             alert("GAME OVER");
+            gameOver.play();
             snake1 = initSnake(3);
         }else{
             snake1 = initSnake(snake1.life);
