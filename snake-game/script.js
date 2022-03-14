@@ -129,7 +129,7 @@ function drawSpeed(snake) {
   let ctx = speedCanvas.getContext("2d");
 
   clearScreen(ctx);
-  ctx.font = "15px Arial";
+  ctx.font = "15px Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
   ctx.textAlign = "center";
   ctx.fillText(
     "Speed : " + snake.speed,
