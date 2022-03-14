@@ -1,0 +1,24 @@
+name: Snake Game Pages
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - "snake-game/**"
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./snake-game
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: snake-game
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
