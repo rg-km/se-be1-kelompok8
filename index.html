@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Snake_Game Kelompok-8</title>
+    <link rel="icon" type="png" href="assets/ruangguru.png"><!-- Logo atas Ruang Guru  -->
+    <meta property="og:title" content="Snake_Game Kelompok-8" />
+    <meta name="author" content="Achmad Izhar as Zharonk">
+    <meta name="author2" content="Aris Firmansyah">
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style>
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}img {  display: block;}
+    </style>
+    <style>
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+      }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Passero+One:wght@400&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"/>
+    <link rel="stylesheet" href="css/home.css" />
+    <link href="css/home.css" rel="stylesheet" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+
+  <body onload="draw();">
+      <!-- SNAKE -->
+      <!-- snake-head -->
+      <img id="snake-head-top" style="display: none;" src="assets/snakeHeadTop.png" alt="snake head" width="20" height="20"/>
+      <img id="snake-head-down" style="display: none;" src="assets/snakeHeadDown.png" alt="snake head" width="20" height="20"/>
+      <img id="snake-head-left" style="display: none;" class="asset" src="assets/snakeHeadLeft.png" alt="snake head" width="20" height="20"/>
+      <img id="snake-head-right" style="display: none;" class="asset" src="assets/snakeHeadRight.png" alt="snake head" width="20" height="20"/>
+      <!-- end snake-head -->
+
+      <!-- snake body-->
+      <img id="snake-body" style="display: none;" src="assets/snakeBody.png" alt="snake-body" width="20" height="20">
+      <!-- end snake body-->
+      <img id="apple" style="display: none;" width="20" height="20" src="assets/apple.svg" alt="Apple">
+      <div>
+        <div class="home-container">
+          <!-- <span class="home-text">SNAKE GAME</span> -->
+          <span class="home-text">SNAKE GAME</span>
+
+            <div class="home-container1">
+              <canvas id="score1Board" class="home-container2"></canvas>
+              
+              <canvas id="snakeBoard" width="600" height="600" class="home-container4"></canvas>
+              <div class="home-container5">
+                <ul>
+                  <li>
+                    <img id="life1" width="20" src="assets/life.png" alt="Heart"/>
+                  </li>
+                  <li>
+                    <img id="life2" width="20" src="assets/life.png" alt="Heart"/>
+                  </li>
+                  <li>
+                    <img id="life3" width="20" src="assets/life.png" alt="Heart"/>
+                  </li>
+                </ul>
+              </div>
+              <canvas id="speedBoard"  width="100" height="50"></canvas>
+              <canvas id="levelBoard"  width="100" height="50"></canvas>         
+            </div>
+        </div>
+      </div>
+      
+  </body>
+</html>
