@@ -175,7 +175,7 @@ function draw() {
 
     // manggil drawScore() buat snake1
     drawScore(snake1);
-
+    // gambar heart diatas
     drawlife(snake1.life);
     drawSpeed(snake1); // speed
     drawLevel(snake1);
