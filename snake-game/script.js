@@ -129,7 +129,7 @@ function drawSpeed(snake) {
   let ctx = speedCanvas.getContext("2d");
 
   clearScreen(ctx);
-  ctx.font = "15px Arial";
+  ctx.font = "15px Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
   ctx.textAlign = "center";
   ctx.fillText(
     "Speed : " + snake.speed,
@@ -175,7 +175,7 @@ function draw() {
 
     // manggil drawScore() buat snake1
     drawScore(snake1);
-
+    // gambar heart diatas
     drawlife(snake1.life);
     drawSpeed(snake1); // speed
     drawLevel(snake1);
